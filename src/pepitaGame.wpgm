@@ -30,8 +30,8 @@ program PepitaGame {
 	keyboard.left().onPressDo { pepita.move(pepita.position().left(1)) }
 	keyboard.right().onPressDo { pepita.move(pepita.position().right(1)) }
 		
-	keyboard.m().onPressDo { pepita.comer(manzana) }
-	keyboard.a().onPressDo { pepita.comer(alpiste) }
+	keyboard.m().onPressDo { pepita.volarYcomer(manzana) }
+	keyboard.a().onPressDo { pepita.volarYcomer(alpiste) }
 	
 //	START
 	game.start()

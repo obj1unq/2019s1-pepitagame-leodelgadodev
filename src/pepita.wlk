@@ -28,14 +28,12 @@ object pepita {
 		}
 		else { game.say(self, "Dame comida!!!!" ) }
 	}
-		
-	//}
 	
-	method comer(comida) {
+	method volarYcomer(comida) {
 		self.move(comida.position())
 		game.removeVisual(comida)
 		self.engordar()
-		energia += comida.energia()
+		//energia += comida.energia()
 	}
 
 	method engordar() {
