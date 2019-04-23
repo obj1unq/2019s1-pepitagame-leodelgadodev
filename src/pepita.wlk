@@ -6,6 +6,7 @@ object pepita {
 	var property energia = 100
 	var property ciudad = buenosAires 
 	var imagen = "pepita.png"
+	var amiga = null
 
 	var property position = game.at(3,3)
 	method image() = imagen
@@ -14,9 +15,17 @@ object pepita {
 		energia = energia + comida.energia()
 	}
 	
+	method nuevaAmiga(ave) {
+		if (amiga != ave ) {
+			game.say(self, "Hola " + ave.nombre() + "!!!!! Hace un hermoso dia hoy!")
+			amiga = ave
+		}
+		
+	}
+	
 	method volaHacia(unaCiudad) {
 		if (ciudad == unaCiudad || self.position() == unaCiudad.position() ) 
-		{ game.say(self, "Ya estoy en" + unaCiudad.nombre() )	}
+		{ game.say(self, "Ya estoy en " + unaCiudad.nombre() )	}
 		else { self.volaSiPodes(unaCiudad) }
 	}
 	
@@ -55,5 +64,28 @@ object pepita {
 	method comerComerComer() {
 		if (self.position() == manzana.position()) { game.removeVisual(manzana) }
 		if (self.position() == alpiste.position()) { game.removeVisual(alpiste) }
+	}
+	
+	
+	
+}
+
+object pepona {
+	method nombre() = "pepona" 
+	method position() = game.at(2,8)
+	method image() = "pepona.png"
+	
+	method colisionasteCon(persona) {
+		//persona.alimentar(self)	
+	}
+}
+
+object pipa {
+	method nombre() = "pepona"
+	method image() = "pepitaCanchera.png"
+	method position() = game.at( 5 , 9 )
+	
+	method colisionasteCon(persona) {
+		//persona.alimentar(self)	
 	}
 }
